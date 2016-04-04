@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# gem 'rails', '4.2.5.1'
+# gem 'rails', '4.2.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -57,7 +57,7 @@ gem 'recaptcha', :require => "recaptcha/rails"
 gem 'bcrypt'
 
 group :test do
-  gem 'shoulda-matchers'
+  gem 'shoulda-matchers', '~> 3.1'
   gem 'rubocop'
   gem 'capybara'
   gem 'launchy'
@@ -66,6 +66,14 @@ group :test do
   gem 'capybara-webkit'
   gem 'json_spec'
 end
+
+group :development do
+
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+
+end
+
 
 group :development, :test do
 
@@ -82,9 +90,6 @@ group :development, :test do
 
   # for rails panel
   gem 'meta_request'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
 
   # Spring speeds up development by keeping your application running in the background.
   # Read more: https://github.com/rails/spring
