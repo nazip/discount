@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160404134532) do
+ActiveRecord::Schema.define(version: 20160405065309) do
 
   create_table "advertisements", force: :cascade do |t|
     t.string   "txt"
@@ -63,6 +63,16 @@ ActiveRecord::Schema.define(version: 20160404134532) do
   end
 
   add_index "shops", ["company_id"], name: "index_shops_on_company_id"
+
+  create_table "shops_logs", force: :cascade do |t|
+    t.integer  "shop_id"
+    t.decimal  "summa"
+    t.datetime "dt"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "shops_logs", ["shop_id"], name: "index_shops_logs_on_shop_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
